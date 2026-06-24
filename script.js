@@ -35,4 +35,17 @@ function displayBooks(){
         readCell.textContent = `${book.read?'read':'not read'}`;
     }
 }
+
+const dialog=document.querySelector('#my-dialog');
+const openBtn=document.querySelector('#dialog-open');
+const formCloseBtn = document.querySelector('#formSubmitBtn');
+
+openBtn.addEventListener('click',(event)=>{
+    event.preventDefault();
+    dialog.showModal();
+});
+formCloseBtn.addEventListener('click',(event)=>{
+    event.preventDefault();
+    dialog.close();
+})
 displayBooks();

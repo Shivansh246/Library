@@ -17,10 +17,32 @@
             <th>Read</th>
         </tr>
         </thead>
-        
+
         <tbody>
 
         </tbody>
     </table>
+        <button type="button" id="dialog-open">New Book</button>
+        <dialog id="my-dialog">
+        <form>
+            <label for="bookTitle">Enter book title: </label>
+            <input type="text" id="bookTitle" name="bookTitle"><br>
+
+            <label for="bookAuthor">Enter book author: </label>
+            <input id="bookAuthor" type="text" name="bookAuthor"><br>
+
+            <label for="pages">Enter number of pages: </label>
+            <input id="pages" type="number" name="pages"><br>
+
+            <input type="radio" id="read" name="read">
+            <label for="read">Read</label>
+            
+            <input type="radio" id="notRead" name="read">
+            <label for="read">Not Read</label><br>
+            
+            <button type="button" formmethod="dialog" id="formSubmitBtn">Submit</button>
+        </form>
+        
+    </dialog>
 </body>
 </html>
