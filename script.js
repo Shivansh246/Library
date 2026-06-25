@@ -46,6 +46,16 @@ openBtn.addEventListener('click',(event)=>{
 });
 formCloseBtn.addEventListener('click',(event)=>{
     event.preventDefault();
+    addBookToLib();
     dialog.close();
 })
+function addBookToLib(){
+    const bookTitle=document.querySelector('#bookTitle').value;
+    const bookAuthor=document.querySelector('#bookAuthor').value;
+    const bookPages=Number(document.querySelector('#pages').value);
+    let selectedRadio = document.querySelector('input[name="read"]:checked');
+    const bookRead = selectedRadio.value=="read"?true:false;
+    addBook(bookTitle,bookAuthor,bookPages,bookRead);
+    displayBooks();
+}
 displayBooks();
