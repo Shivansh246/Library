@@ -29,11 +29,25 @@ function displayBooks(){
         let authorCell = newRow.insertCell(1);
         let pagesCell = newRow.insertCell(2);
         let readCell = newRow.insertCell(3);
+        let removeCell = newRow.insertCell(4);
+
         titleCell.textContent = book.title;
         authorCell.textContent=book.author;
         pagesCell.textContent = book.pages;
         readCell.textContent = `${book.read?'read':'not read'}`;
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Remove';
+
+        removeBtn.addEventListener('click', () => {
+            removeBook(book.id);
+        });
+
+        removeCell.appendChild(removeBtn);
     }
+}
+function removeBook(id) {
+    myLibrary = myLibrary.filter(book => book.id !== id);
+    displayBooks();
 }
 
 const dialog=document.querySelector('#my-dialog');
